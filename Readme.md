@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг»
 
 * Студент: [Екатерина Кошкина](https://up.htmlacademy.ru/javascript/24/user/1486905).
-* Наставник: `Неизвестно`.
+* Наставник: [Алексей Елькин] (https://htmlacademy.ru/profile/alex_elkin)
 
 ---
 
