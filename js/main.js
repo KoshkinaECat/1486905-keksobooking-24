@@ -6,7 +6,7 @@ function getRandomIntInclusive(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-    return null;
+  return null;
 }
 getRandomIntInclusive(1,1);
 
@@ -15,7 +15,7 @@ function getRandomArbitrary(min, max, num) {
   if (min < max && max >= 0 && min >= 0){
     return Math.random().toFixed(num) * (max - min) + min;
   }
-    return NaN;
+  return NaN;
 }
 
 getRandomArbitrary(1,2);
