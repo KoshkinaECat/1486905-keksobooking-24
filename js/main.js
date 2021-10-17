@@ -36,6 +36,8 @@ const PHOTOS = ['https: //assets.htmlacademy.ru/content/intensive/javascript-1/k
   'https: //assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg',
 ];
 
+let photos = [...PHOTOS];
+
 const authorNumber = [
   '01',
   '02',
@@ -62,7 +64,7 @@ const titles = [
   'Отель-галерея',
 ];
 
-const features = [
+const FEATURES = [
   'wifi',
   'dishwasher',
   'parking',
@@ -70,6 +72,8 @@ const features = [
   'elevator',
   'conditioner',
 ];
+
+let features = [...FEATURES];
 
 const unicRandomArrayElem = (arr) => {
   if (arr.length > 0) {
@@ -79,9 +83,9 @@ const unicRandomArrayElem = (arr) => {
   return 'пустой массив';
 };
 
-const randomArrayElem = (arr) => {
-  return arr[_.random(0, arr.length - 1)];
-};
+const randomArrayElem = (arr) =>
+  arr[_.random(0, arr.length - 1)];
+
 
 const latMin = 35.65000;
 const latMax = 35.70000;
@@ -103,13 +107,12 @@ const createProperty = () => {
     lng: getRandomArbitrary(lngMin, lngMax, 5),
   };
 
-  const unicFeature = () => {
-    return unicRandomArrayElem(features);
-  };
+  const unicFeature = () =>
+    unicRandomArrayElem(features);
 
-  const unicPhotos = () => {
-    return unicRandomArrayElem(PHOTOS);
-  };
+
+  const unicPhotos = () =>
+    unicRandomArrayElem(PHOTOS);
 
   const property = () => {
     return {
@@ -124,11 +127,15 @@ const createProperty = () => {
       checkout: randomArrayElem(CHECKOUT),
       features: Array.from({
         length: _.random(1, features.length),
-      }, unicFeature),
+      }, function(){
+        return unicRandomArrayElem(features)
+      }),
       description: randomArrayElem(DESCRIPTION),
       photos: Array.from({
-        length: _.random(1, PHOTOS.length),
-      }, unicPhotos),
+        length: _.random(1, photos.length),
+      }, function(){
+        return unicRandomArrayElem(photos)
+      }),
     };
 
   };
