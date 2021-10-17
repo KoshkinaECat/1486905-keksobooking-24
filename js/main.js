@@ -1,5 +1,42 @@
+const TYPE = [
+  'palace',
+  'flat',
+  'house',
+  'bungalow',
+  'hotel',
+];
 
-let authorNumber = [
+const CHEKIN = [
+  '12:00',
+  '13:00',
+  '14:00',
+];
+
+const CHECKOUT = [
+  '12:00',
+  '13:00',
+  '14:00',
+];
+
+const DESCRIPTION = [
+  'два стола, два стула, машина времени',
+  'роскошная уютная обстановка в восточном стиле',
+  'двухярусная кровать, джакузи',
+  'комната для четверых гостей со всеми удобствами',
+  'кальян, икс-бокс и мини-бар',
+  'бильярд+дартс',
+  'детская игровая комната+бассейн с шариками',
+  'выручай-комната',
+  'кровать размера кинг-сайз',
+  'домашний кинотеатр',
+];
+
+const PHOTOS = ['https: //assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
+  'https: //assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
+  'https: //assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg',
+];
+
+const authorNumber = [
   '01',
   '02',
   '03',
@@ -9,10 +46,10 @@ let authorNumber = [
   '07',
   '08',
   '09',
-  '10'
+  '10',
 ];
 
-let titles = [
+const titles = [
   'Уютное гнездышко',
   'Прекрасный отель',
   'Динамичное городское жилье',
@@ -22,20 +59,29 @@ let titles = [
   'Двухвековой замок',
   'Волшебный дворец',
   'Пряничный домик',
-  'Отель-галерея'
+  'Отель-галерея',
+];
+
+const features = [
+  'wifi',
+  'dishwasher',
+  'parking',
+  'washer',
+  'elevator',
+  'conditioner',
 ];
 
 const unicRandomArrayElem = (arr) => {
   if (arr.length > 0) {
-    const random = _.random(0, arr.length - 1)
+    const random = _.random(0, arr.length - 1);
     return arr.splice(random, 1)[0];
   }
   return 'пустой массив';
 };
 
 const randomArrayElem = (arr) => {
-  arr[_.random(0, arr.length - 1)]
-}
+  return arr[_.random(0, arr.length - 1)];
+};
 
 const latMin = 35.65000;
 const latMax = 35.70000;
@@ -49,27 +95,21 @@ function getRandomArbitrary(min, max, num) {
   return NaN;
 }
 
-const randomTitle = _.random(0, titles.length - 1);
+// const randomTitle = _.random(0, titles.length - 1);
 
 const createProperty = () => {
   const location = {
     lat: getRandomArbitrary(latMin, latMax, 5),
     lng: getRandomArbitrary(lngMin, lngMax, 5),
-  }
+  };
 
-  //features
-  let features = [
-    'wifi',
-    'dishwasher',
-    'parking',
-    'washer',
-    'elevator',
-    'conditioner'
-  ];
   const unicFeature = () => {
-    console.log('##### features: - ', features);
-    return unicRandomArrayElem(features)
-  }
+    return unicRandomArrayElem(features);
+  };
+
+  const unicPhotos = () => {
+    return unicRandomArrayElem(PHOTOS);
+  };
 
   const property = () => {
     return {
@@ -83,18 +123,19 @@ const createProperty = () => {
       checkin: randomArrayElem(CHEKIN),
       checkout: randomArrayElem(CHECKOUT),
       features: Array.from({
-        length: _.random(1, features.length)
+        length: _.random(1, features.length),
       }, unicFeature),
       description: randomArrayElem(DESCRIPTION),
       photos: Array.from({
-        length: _.random(1, PHOTOS.length)
-      }, unicFeature),
+        length: _.random(1, PHOTOS.length),
+      }, unicPhotos),
     };
 
   };
+  return property();
+};
+const properties = Array.from({
+  length: 10,
+}, createProperty);
+console.log('### properties', properties)  ;
 
-  const properties = Array.from({
-    length: 10
-  }, createProperty);
-  console.log('### properties', properties)
-}
