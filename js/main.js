@@ -36,8 +36,6 @@ const PHOTOS = ['https: //assets.htmlacademy.ru/content/intensive/javascript-1/k
   'https: //assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg',
 ];
 
-let photos = [...PHOTOS];
-
 const authorNumber = [
   '01',
   '02',
@@ -72,8 +70,6 @@ const FEATURES = [
   'elevator',
   'conditioner',
 ];
-
-let features = [...FEATURES];
 
 const unicRandomArrayElem = (arr) => {
   if (arr.length > 0) {
@@ -126,14 +122,16 @@ const createProperty = () => {
       checkin: randomArrayElem(CHEKIN),
       checkout: randomArrayElem(CHECKOUT),
       features: Array.from({
-        length: _.random(1, features.length),
+        length: _.random(1, FEATURES.length),
       }, function(){
+        let features = [...FEATURES];
         return unicRandomArrayElem(features)
       }),
       description: randomArrayElem(DESCRIPTION),
       photos: Array.from({
-        length: _.random(1, photos.length),
+        length: _.random(1, PHOTOS.length),
       }, function(){
+        let photos = [...PHOTOS];
         return unicRandomArrayElem(photos)
       }),
     };
