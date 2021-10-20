@@ -1,32 +1,22 @@
-
-
-
-// TYPE
-
 const TYPE = [
   'palace',
   'flat',
   'house',
   'bungalow',
-  'hotel'
+  'hotel',
 ];
 
-//chekin
 const CHEKIN = [
   '12:00',
   '13:00',
-  '14:00'
-]
+  '14:00',
+];
 
-//chekout
 const CHECKOUT = [
   '12:00',
   '13:00',
-  '14:00'
-]
-
-
-//description
+  '14:00',
+];
 
 const DESCRIPTION = [
   'два стола, два стула, машина времени',
@@ -38,16 +28,49 @@ const DESCRIPTION = [
   'детская игровая комната+бассейн с шариками',
   'выручай-комната',
   'кровать размера кинг-сайз',
-  'домашний кинотеатр'
-]
+  'домашний кинотеатр',
+];
 
-//photos
-
-let PHOTOS = ['https: //assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
+const PHOTOS = ['https: //assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
   'https: //assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
-  'https: //assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg'
-]
+  'https: //assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg',
+];
 
-// export {
-//   AUTHOR,TITLE, TYPE, CHEKIN, CHECKOUT, FEATURES, DESCRIPTION, PHOTOS
-// }
+const authorNumber = [
+  '01',
+  '02',
+  '03',
+  '04',
+  '05',
+  '06',
+  '07',
+  '08',
+  '09',
+  '10',
+];
+
+const titles = [
+  'Уютное гнездышко',
+  'Прекрасный отель',
+  'Динамичное городское жилье',
+  'Центр комфорта',
+  'Живописный домик',
+  'Историческое здание',
+  'Двухвековой замок',
+  'Волшебный дворец',
+  'Пряничный домик',
+  'Отель-галерея',
+];
+
+const FEATURES = [
+  'wifi',
+  'dishwasher',
+  'parking',
+  'washer',
+  'elevator',
+  'conditioner',
+];
+
+export {
+  TYPE, CHEKIN, CHECKOUT, DESCRIPTION, PHOTOS, authorNumber, titles, FEATURES
+};
