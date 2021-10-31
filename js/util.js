@@ -7,7 +7,11 @@ import {
   PHOTOS,
   authorNumber,
   titles,
-  FEATURES
+  FEATURES,
+  latMin,
+  latMax,
+  lngMin,
+  lngMax
 }
   from './data.js';
 
@@ -17,11 +21,6 @@ function getRandomArbitrary(min, max, num) {
   }
   return NaN;
 }
-
-const latMin = 35.65000;
-const latMax = 35.70000;
-const lngMin = 139.70000;
-const lngMax = 139.80000;
 
 const createProperty = () => {
   const location = {
