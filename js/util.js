@@ -39,7 +39,7 @@ const createProperty = () => {
   const randomArrayElem = (arr) =>
     arr[_.random(0, arr.length - 1)];
 
-  const property = () => {
+  const offer = () => {
     return {
       avatar: `img/avatars/user${unicRandomArrayElem(authorNumber)}.png`,
       title: randomArrayElem(titles),
@@ -66,12 +66,12 @@ const createProperty = () => {
     };
 
   };
-  return property();
+  return offer();
 };
 const properties = Array.from({
   length: 10,
 }, createProperty);
-console.log('### properties', properties);
+console.log('###offer', properties);
 
 
 export {
