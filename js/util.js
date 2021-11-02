@@ -13,7 +13,9 @@ import {
   lngMin,
   lngMax
 }
-  from './data.js';
+from './data.js';
+
+const randomArrayElem = (arr) => arr[_.random(0, arr.length - 1)];
 
 function getRandomArbitrary(min, max, num) {
   if (min < max && max >= 0 && min >= 0) {
@@ -36,12 +38,12 @@ const createProperty = () => {
     return 'пустой массив';
   };
 
-  const randomArrayElem = (arr) =>
-    arr[_.random(0, arr.length - 1)];
-
-  const property = () => {
+  const offer = () => {
     return {
-      avatar: `img/avatars/user${unicRandomArrayElem(authorNumber)}.png`,
+      author: {
+        avatar: `img/avatars/user${unicRandomArrayElem(authorNumber)}.png`,
+      },
+
       title: randomArrayElem(titles),
       address: `${location.lat}, ${location.lng}`,
       price: _.random(15000, 9990000),
@@ -66,14 +68,17 @@ const createProperty = () => {
     };
 
   };
-  return property();
+  return offer();
 };
 const properties = Array.from({
   length: 10,
 }, createProperty);
-console.log('### properties', properties);
+console.log('###offer', properties);
 
 
 export {
-  createProperty, getRandomArbitrary
+  createProperty,
+  getRandomArbitrary,
+  randomArrayElem,
+  properties
 };
