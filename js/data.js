@@ -1,4 +1,3 @@
-
 const latMin = 35.65000;
 const latMax = 35.70000;
 const lngMin = 139.70000;
@@ -80,3 +79,5 @@ const FEATURES = [
 export {
   TYPE, CHEKIN, CHECKOUT, DESCRIPTION, PHOTOS, authorNumber, titles, FEATURES, latMax, latMin, lngMax, lngMin
 };
+
+

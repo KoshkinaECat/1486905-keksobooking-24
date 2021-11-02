@@ -37,7 +37,7 @@ const createProperty = () => {
     }
     return 'пустой массив';
   };
-
+  
   const offer = () => {
     return {
       author: {
