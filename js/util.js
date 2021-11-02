@@ -15,6 +15,9 @@ import {
 }
   from './data.js';
 
+const randomArrayElem = (arr) =>
+arr[_.random(0, arr.length - 1)];
+
 function getRandomArbitrary(min, max, num) {
   if (min < max && max >= 0 && min >= 0) {
     return +(_.random(min, max, true)).toFixed(num);
@@ -28,16 +31,13 @@ const createProperty = () => {
     lng: getRandomArbitrary(lngMin, lngMax, 5),
   };
 
-  const unicRandomArrayElem = (arr) => {
+const unicRandomArrayElem = (arr) => {
     if (arr.length > 0) {
       const random = _.random(0, arr.length - 1);
       return arr.splice(random, 1)[0];
     }
     return 'пустой массив';
   };
-
-  const randomArrayElem = (arr) =>
-    arr[_.random(0, arr.length - 1)];
 
   const offer = () => {
     return {
@@ -75,5 +75,5 @@ console.log('###offer', properties);
 
 
 export {
-  createProperty, getRandomArbitrary
+  createProperty, getRandomArbitrary, randomArrayElem
 };
