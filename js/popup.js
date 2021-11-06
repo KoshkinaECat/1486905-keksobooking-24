@@ -70,4 +70,8 @@ const createPropertyElement = (offer) => {
 const map = document.querySelector('#map-canvas');
 
 map.appendChild(createPropertyElement(property));
+
 export {card};
+
+
+
