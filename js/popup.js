@@ -57,8 +57,12 @@ const createPropertyElement = (offer) => {
   const photosLength = offer.photos.length;
   for (var i=0; i<photosLength; i++){
     console.log(offer.photos[i]);
-    card.querySelector('.popup__photo').src=offer.photos[i];
+    const photoImg = card.querySelector('.popup__photo').cloneNode(true);
+    photoImg.src = offer.photos[i];
+    card.querySelector('.popup__photos').appendChild(photoImg);
+    // card.querySelector('.popup__photo').src=offer.photos[i];
   }
+  card.querySelector('[src=""].popup__photo').remove();
   // card.querySelector('.popup__photos').src = offer.photos;
 
   //меняем значение атрибута src у аватарки пользователя
