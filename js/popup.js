@@ -1,8 +1,11 @@
 import './data.js';
+import { PHOTOS } from './data.js';
 import './util.js';
 import {
   properties
 } from './util.js';
+// находим шаблон и делаем из него копию(фрагмент)
+const card = document.querySelector('#card').content.cloneNode(true);
 
 const property = properties[0];
 
@@ -23,11 +26,10 @@ const createPropertyElement = (offer) => {
     'hotel': 'Отель',
   };
 
-  // находим шаблон и делаем из него копию(фрагмент)
-  const card = document.querySelector('#card').content.cloneNode(true);
+
   //меняем в нашем фрагменте заголовок
-  const cardTitle = card.querySelector('.popup__title');
-  cardTitle.textContent = offer.title;
+  card.querySelector('.popup__title').textContent = offer.title;
+
   //меняем адрес во фрагменте
   card.querySelector('.popup__text--address').textContent = offer.address;
   //В блок .popup__type выведите тип жилья offer.type, сопоставив с подписями
@@ -51,7 +53,17 @@ const createPropertyElement = (offer) => {
 
   //В блок .popup__photos выведите все фотографии из списка offer.photos.
   //Каждая из строк массива photos должна записываться как атрибут src соответствующего изображения.
-  card.querySelector('.popup__photos').textContent = offer.photos;
+  // const similarPhoto = PHOTOS.content.cloneNode(true);
+  const photosLength = offer.photos.length;
+  for (var i=0; i<photosLength; i++){
+    console.log(offer.photos[i]);
+    const photoImg = card.querySelector('.popup__photo').cloneNode(true);
+    photoImg.src = offer.photos[i];
+    card.querySelector('.popup__photos').appendChild(photoImg);
+    // card.querySelector('.popup__photo').src=offer.photos[i];
+  }
+  card.querySelector('[src=""].popup__photo').remove();
+  // card.querySelector('.popup__photos').src = offer.photos;
 
   //меняем значение атрибута src у аватарки пользователя
   card.querySelector('.popup__avatar').src = offer.author.avatar;
@@ -62,4 +74,8 @@ const createPropertyElement = (offer) => {
 const map = document.querySelector('#map-canvas');
 
 map.appendChild(createPropertyElement(property));
+
+export {card};
+
+
 
