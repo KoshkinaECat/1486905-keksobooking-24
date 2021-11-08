@@ -1,5 +1,4 @@
 import './data.js';
-import { PHOTOS } from './data.js';
 import './util.js';
 import {
   properties
